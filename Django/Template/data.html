@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Bank</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .title {
+            margin-top: 4px;
+            color: #6C63FF;
+            float: left;
+        }
+        a {
+            text-decoration: none;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="title"><a href="/">Mini-Bank</a></h1>
+    </nav>
+    
+    <table>
+        <tr align="left">
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Amount</th>
+        </tr>
+        {% for i in data.values %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.username}}</td>
+            <td>{{i.passcode}}</td>
+            <td>{{i.amount}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

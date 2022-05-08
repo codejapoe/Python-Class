@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Bank</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .title {
+            margin-top: 4px;
+            color: #6C63FF;
+            float: left;
+        }
+        a {
+            float: right;
+            margin: 10px 10px;
+            text-decoration: none;
+            font-size: 30px;
+            color: #6C63FF;
+        }
+        .signup {
+            background-color: #6C63FF;
+            font-size: 30px;
+            border-color: transparent;
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .signup:hover {
+            border-color: #6C63FF;
+            background-color: white;
+            color: #6C63FF;
+        }
+        .signin {
+            color: #6C63FF;
+        }
+        .username, .password {
+            border-radius: 12px;
+            width: 10cm;
+            height: 1cm;
+            margin: 10px 10px;
+            border: 3px solid #008CBA;
+            font-size: 18px;
+        }
+        .submit-btn {
+            border-radius: 12px;
+            border: 2px solid #008CBA;
+            padding: 10px 10px;
+            margin: 10px;
+            background-color: #008CBA;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: white;
+            color: #008CBA;
+        }
+        .alert {
+            color: #F50057;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="title"><a href="/">Mini-Bank</a></h1>
+        <a href="signup">
+            <button class="signup">
+                Sign Up
+            </button>
+        </a>
+        <a href="signin" class=".signin">
+            Sign In
+        </a>
+    </nav>
+    
+    {% block page %}
+    {% endblock %}
+    <script>
+        function check() {
+            var pw1 = document.getElementById("password").value;
+            var pw2 = document.getElementById("password2").value;
+            if (pw1 === pw2) {
+                document.getElementsByClassName("submit-btn").disabled = false;
+                document.getElementById("alert").innerText = "";
+            } else {
+                document.getElementsByClassName("submit-btn").disabled = true;
+                document.getElementById("alert").innerText = "Not Same";
+            }
+        }
+    </script>
+</body>
+</html>

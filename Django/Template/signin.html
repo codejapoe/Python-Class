@@ -1,0 +1,11 @@
+{% extends "nav.html" %}
+{% block page %}
+    <h1>Sign in an account</h1>
+    <p class="alert" id="alert">{{alert}}</p>
+    <form action="login" method="post">  
+        {% csrf_token %}
+        <input type="text" name="username" class="username" placeholder="Username" value="{{username}}"><br>
+        <input type="password" name="password" id="password" class="password" placeholder="Password" value=""><br><br>
+        <input type="submit" class="submit-btn" value="Sign In">
+    </form>
+{% endblock %}

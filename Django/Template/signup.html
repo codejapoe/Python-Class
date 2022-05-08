@@ -1,0 +1,13 @@
+{% extends "nav.html" %}
+{% block page %}
+    <h1>Sign up an account</h1>
+    <p class="alert" id="alert">{{alert}}</p>
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" class="username" placeholder="Username" value="{{username}}"><br>
+        <input type="password" name="password" id="password" class="password" placeholder="Password" onkeyup="check()" value=""><br>
+        <input type="password" name="password2" id="password2" class="password" placeholder="Confirm Password" onkeyup="check()" value=""><br>
+        <input type="number" name="amount" placeholder="Amount" class="username"><br><br>
+        <input type="submit" class="submit-btn" value="Sign Up">
+    </form>
+{% endblock %}
